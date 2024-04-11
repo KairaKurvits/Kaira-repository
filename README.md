@@ -1,7 +1,7 @@
 # Welcome to Kaira's repository ❤💖
 
 ## I am curretly studying new programming languages 💪🤞
- Java and Python 
+ Java and Python. 
  I am learing in WoTech program.
  
  2. Lesson
