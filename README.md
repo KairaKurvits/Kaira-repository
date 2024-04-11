@@ -485,6 +485,36 @@ and
     }
 
 ```
+Lesson 7 homework. I do not have all previous homeworks at notepad I need to search
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int randomNumber = (int) (Math.random() * 101); // Generates a random number between 0 and 100
+        int guess;
+
+        System.out.println("Welcome to the Guessing Game!");
+        System.out.println("I've chosen a number between 0 and 100. Try to guess it!");
+
+        do {
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
+
+            if (guess < randomNumber) {
+                System.out.println("The number is bigger than your guess. Try again!");
+            } else if (guess > randomNumber) {
+                System.out.println("The number is smaller than your guess. Try again!");
+            }
+        } while (guess != randomNumber);
+
+        System.out.println("Congratulations! You've guessed the number " + randomNumber + " correctly!");
+        scanner.close();
+    }
+}
+```
 3. Python
 
    
