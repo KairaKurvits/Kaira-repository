@@ -1,0 +1,47 @@
+#Here, we will use the Seaborn library to load the dataset.
+```py
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the Titanic dataset
+titanic = sns.load_dataset('titanic')
+
+# Display the first few rows to get an overview of the data structure
+titanic.head()
+# Check the dimensions of the dataset (number of rows and columns)
+titanic.shape
+# Identify missing values
+missing_values = titanic.isnull().sum()
+missing_values
+# Fill missing values in numerical columns with the mean
+titanic['age'].fillna(titanic['age'].mean(), inplace=True)
+titanic['fare'].fillna(titanic['fare'].mean(), inplace=True)
+
+# Fill missing values in categorical columns with the mode
+titanic['embarked'].fillna(titanic['embarked'].mode()[0], inplace=True)
+titanic['deck'].fillna(titanic['deck'].mode()[0], inplace=True)
+titanic['embark_town'].fillna(titanic['embark_town'].mode()[0], inplace=True)
+titanic['alive'].fillna(titanic['alive'].mode()[0], inplace=True)
+# Compute basic statistics for numerical columns
+titanic.describe()
+# Analyze categorical variables using value counts
+categorical_columns = ['sex', 'class', 'embarked', 'who', 'deck', 'embark_town', 'alive', 'alone']
+for column in categorical_columns:
+    print(f"Value counts for {column}:")
+    print(titanic[column].value_counts())
+    print("\n")
+# Choose the 'sex' column to create a bar chart
+sex_counts = titanic['sex'].value_counts()
+
+# Plotting the bar chart using Matplotlib
+plt.figure(figsize=(8, 5))
+sex_counts.plot(kind='bar', color=['forestgreen', 'lightpink'])
+plt.title('Number of Male and Female Passengers on the Titanic')
+plt.xlabel('Sex')
+plt.ylabel('Count')
+plt.xticks(rotation=0)
+plt.show()
+
+```
