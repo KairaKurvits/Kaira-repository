@@ -1,5 +1,5 @@
 #Here, we will use the Seaborn library to load the dataset.
-```pythom
+```py
 
 import pandas as pd
 import seaborn as sns
@@ -43,5 +43,4 @@ plt.xlabel('Sex')
 plt.ylabel('Count')
 plt.xticks(rotation=0)
 plt.show()
-
 ```
