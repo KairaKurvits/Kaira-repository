@@ -1,5 +1,5 @@
 #Here, we will use the Seaborn library to load the dataset.
-```py
+```pythom
 
 import pandas as pd
 import seaborn as sns
